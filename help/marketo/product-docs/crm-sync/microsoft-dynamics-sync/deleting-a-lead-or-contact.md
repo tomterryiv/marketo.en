@@ -12,6 +12,6 @@ There a few things to know when it comes to deleting leads/contacts in Microsoft
 
 * "Delete Person" flow action: This only deletes a person in Marketo (an option to also delete them in Dynamics is not available).
 
-* If a lead is deleted in Marketo (but not in Dynamics) and is updated in Dynamics after that, it would create a new person in Marketo (same email address, new person ID).
+* If a lead is deleted in Marketo (but not in Dynamics) and is updated in Dynamics after that, it would not create a new person in Marketo. The reason is because the connector in Dynamics is looking for UPDATE to an existing record which doesn’t exist any longer, instead of a 'create' action.
 
 * If a lead is deleted in Dynamics (but not in Marketo) and then subsequently runs through the "Sync Person to Microsoft" flow action, it would create a new lead in Dynamics.
